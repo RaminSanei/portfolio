@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ali Sanei - Software Developer</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <h2>Loading Portfolio...</h2>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Morphing Background -->
+    <div class="bg-morphing"></div>
+
+    <!-- Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- DNA Helix -->
+    <div class="dna-helix">
+        <div class="dna-strand"></div>
+        <div class="dna-strand"></div>
+        <div class="dna-base" style="top: 20px;"></div>
+        <div class="dna-base" style="top: 60px; animation-delay: -1s;"></div>
+        <div class="dna-base" style="top: 100px; animation-delay: -2s;"></div>
+        <div class="dna-base" style="top: 140px; animation-delay: -3s;"></div>
+        <div class="dna-base" style="top: 180px; animation-delay: -1.5s;"></div>
+        <div class="dna-base" style="top: 220px; animation-delay: -2.5s;"></div>
+        <div class="dna-base" style="top: 260px; animation-delay: -0.5s;"></div>
+        <div class="dna-base" style="top: 300px; animation-delay: -3.5s;"></div>
+    </div>
+
+    <!-- Chemical Molecule Network -->
+    <div class="molecule-network">
+        <div class="molecule-atom" style="top: 50px; left: 50px; animation-delay: 0s;"></div>
+        <div class="molecule-atom" style="top: 100px; left: 120px; animation-delay: -1s;"></div>
+        <div class="molecule-atom" style="top: 150px; left: 80px; animation-delay: -2s;"></div>
+        <div class="molecule-atom" style="top: 200px; left: 180px; animation-delay: -1.5s;"></div>
+        <div class="molecule-atom" style="top: 120px; left: 200px; animation-delay: -0.5s;"></div>
+        
+        <div class="molecule-bond" style="top: 57px; left: 62px; width: 60px; transform: rotate(25deg);"></div>
+        <div class="molecule-bond" style="top: 107px; left: 132px; width: 45px; transform: rotate(-45deg);"></div>
+        <div class="molecule-bond" style="top: 157px; left: 92px; width: 75px; transform: rotate(35deg);"></div>
+        <div class="molecule-bond" style="top: 127px; left: 142px; width: 55px; transform: rotate(15deg);"></div>
+    </div>
+
+    <!-- Industrial Circuit Pattern -->
+    <div class="circuit-pattern">
+        <!-- Horizontal lines -->
+        <div class="circuit-line horizontal" style="top: 50px; left: 20px; width: 60px;"></div>
+        <div class="circuit-line horizontal" style="top: 100px; left: 40px; width: 80px; animation-delay: -1s;"></div>
+        <div class="circuit-line horizontal" style="top: 150px; left: 10px; width: 70px; animation-delay: -2s;"></div>
+        <div class="circuit-line horizontal" style="top: 200px; left: 50px; width: 50px; animation-delay: -1.5s;"></div>
+        
+        <!-- Vertical lines -->
+        <div class="circuit-line vertical" style="top: 30px; left: 40px; height: 80px;"></div>
+        <div class="circuit-line vertical" style="top: 80px; left: 80px; height: 90px; animation-delay: -0.5s;"></div>
+        <div class="circuit-line vertical" style="top: 120px; left: 120px; height: 70px; animation-delay: -1.5s;"></div>
+        
+        <!-- Circuit nodes -->
+        <div class="circuit-node" style="top: 46px; left: 36px;"></div>
+        <div class="circuit-node" style="top: 96px; left: 76px; animation-delay: -1s;"></div>
+        <div class="circuit-node" style="top: 146px; left: 116px; animation-delay: -2s;"></div>
+        <div class="circuit-node" style="top: 196px; left: 46px; animation-delay: -0.7s;"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="nav">
+        <ul class="nav-menu">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#experience" class="nav-link">Experience</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <header id="home">
+        <div class="header-3d-scene" id="threejs-container"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Ali Sanei</h1>
+                <p class="hero-subtitle">Biomedical Engineer → Software Developer</p>
+                <p class="hero-description">
+                    🧬 From polymer microencapsulation to React components 🔧 From industrial automation to elegant code 
+                    💻 Bridging the gap between life sciences and technology to create innovative solutions that matter.
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="cta-button">View My Work</a>
+                    <a href="#contact" class="cta-button">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title fade-in">Experience Journey</h2>
+            <div class="experience-timeline">
+                <div class="timeline-line"></div>
+                
+                <div class="experience-item">
+                    <div class="timeline-dot"></div>
+                    <div class="experience-card">
+                        <h3 class="experience-title">Software Engineer</h3>
+                        <h4 class="experience-company">Fararo Paya</h4>
+                        <p class="experience-date">Jan 2020 - Feb 2024</p>
+                        <ul class="experience-achievements">
+                            <li>Re-engineered legacy Delphi system into cross-platform desktop app with React, TypeScript, and Electron</li>
+                            <li>Integrated software with industrial automation hardware, implementing modular design patterns</li>
+                            <li>Built embedded protocol integrations and automated deployment pipelines</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item animate-right">
+                    <div class="timeline-dot"></div>
+                    <div class="experience-card">
+                        <h3 class="experience-title">Software Developer</h3>
+                        <h4 class="experience-company">Snappfood</h4>
+                        <p class="experience-date">Nov 2017 - Apr 2019</p>
+                        <ul class="experience-achievements">
+                            <li>Monitored platform connectivity ensuring 99.9% uptime for order processing</li>
+                            <li>Diagnosed complex technical issues reducing system downtime by 40%</li>
+                            <li>Led cross-functional teams in system improvement initiatives</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="experience-item animate-right">
+                    <div class="timeline-dot"></div>
+                    <div class="experience-card">
+                        <!-- <h3 class="experience-title">Software Developer</h3>
+                        <h4 class="experience-company">Snappfood</h4>
+                        <p class="experience-date">Nov 2017 - Apr 2019</p>
+                        <ul class="experience-achievements">
+                            <li>Monitored platform connectivity ensuring 99.9% uptime for order processing</li>
+                            <li>Diagnosed complex technical issues reducing system downtime by 40%</li>
+                            <li>Led cross-functional teams in system improvement initiatives</li>
+                        </ul>
+                         -->
+                         <h3 class="experience-title">Senior Technical Support Manager</h3>
+                         <h4 class="experience-company">Snappfood</h4>
+                         <p class="experience-date">Apr 2019 - Jan 2020</p>
+                         <ul class="experience-achievements">
+                             <li>Built scalable React.js components for high-traffic applications</li>
+                             <li>Introduced code review standards and Git workflow optimization</li>
+                             <li>Implemented RESTful API integrations and caching strategies</li>
+                         </ul>
+                     </div>
+                 </div>
+ 
+                 <!-- <div class="experience-item">
+                     <div class="timeline-dot"></div>
+                     <div class="experience-card"> -->
+                         
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title fade-in">Technical Arsenal</h2>
+            <div class="skills-container">
+                <div class="skill-category fade-in">
+                    <h3>🧬 Biomedical Engineering</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Microencapsulation</span>
+                        <span class="skill-tag">Polymer Systems</span>
+                        <span class="skill-tag">Regenerative Medicine</span>
+                        <span class="skill-tag">Cell Culture</span>
+                        <span class="skill-tag">Biomaterials</span>
+                        <span class="skill-tag">Research & Publication</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>⚗️ Chemical Engineering</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Polymerization</span>
+                        <span class="skill-tag">Process Design</span>
+                        <span class="skill-tag">ABS Production</span>
+                        <span class="skill-tag">Petrochemicals</span>
+                        <span class="skill-tag">Industrial Operations</span>
+                        <span class="skill-tag">Safety Protocols</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>🚀 Frontend Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">Next.js</span>
+                        <span class="skill-tag">Vue.js</span>
+                        <span class="skill-tag">Angular</span>
+                        <span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">Electron</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>⚙️ Backend & Systems</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">C/C++</span>
+                        <span class="skill-tag">C#</span>
+                        <span class="skill-tag">Express</span>
+                        <span class="skill-tag">MongoDB</span>
+                        <span class="skill-tag">PostgreSQL</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>🏭 Industrial Automation</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PLC Programming</span>
+                        <span class="skill-tag">HMI Development</span>
+                        <span class="skill-tag">Modbus Protocol</span>
+                        <span class="skill-tag">Sensor Integration</span>
+                        <span class="skill-tag">SCADA Systems</span>
+                        <span class="skill-tag">Real-time Control</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-in">
+                    <h3>🛠️ DevOps & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Bash</span>
+                    </div>
+                </div>
+            <!-- </div> DevOps & Tools</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Bash</span>
+                    </div>
+                </div> -->
+
+                <div class="skill-category fade-in">
+                    <h3>🎯 Specializations</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Industrial Automation</span>
+                        <span class="skill-tag">IoT Integration</span>
+                        <span class="skill-tag">Desktop Apps</span>
+                        <span class="skill-tag">Real-time Systems</span>
+                        <span class="skill-tag">UI/UX Design</span>
+                        <span class="skill-tag">Agile/Scrum</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title fade-in">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <div class="project-icon">🧬</div>
+                    <h3 class="project-title">Biodegradable Polymer Systems</h3>
+                    <p class="project-description">
+                        Designed multi-layered biodegradable polymer systems using microencapsulation techniques for targeted delivery 
+                        of mesenchymal stem cells in regenerative medicine applications. Published research on mechanical stability effects.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Polymer Science</span>
+                        <span class="tech-tag">Microencapsulation</span>
+                        <span class="tech-tag">Cell Biology</span>
+                        <span class="tech-tag">Research</span>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-icon">🔧</div>
+                    <h3 class="project-title">PLC-HMI Programming Tool</h3>
+                    <p class="project-description">
+                        Advanced desktop application built with React, TypeScript, and Electron for configuring industrial automation systems. 
+                        Features real-time hardware communication and modular architecture for PLC control systems.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Electron</span>
+                        <span class="tech-tag">Modbus</span>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-icon">🏭</div>
+                    <h3 class="project-title">Industrial Sensor Calibration System</h3>
+                    <p class="project-description">
+                        C# WinForms application for configuring and calibrating industrial temperature and humidity sensors 
+                        via Modbus protocol. Real-time data visualization with automated calibration algorithms.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">WinForms</span>
+                        <span class="tech-tag">Modbus</span>
+                        <span class="tech-tag">Industrial IoT</span>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-icon">⚗️</div>
+                    <h3 class="project-title">ABS Polymer Production Optimization</h3>
+                    <p class="project-description">
+                        Petrochemical plant internship project focusing on ABS polymer production optimization. 
+                        Analyzed polymerization processes and implemented efficiency improvements in industrial operations.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Chemical Engineering</span>
+                        <span class="tech-tag">Process Optimization</span>
+                        <span class="tech-tag">Polymerization</span>
+                        <span class="tech-tag">Industrial Analysis</span>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-icon">🤖</div>
+                    <h3 class="project-title">AI-Powered Web Application</h3>
+                    <p class="project-description">
+                        Full-stack Next.js application with integrated AI features for dynamic content generation and enhanced user interactions. 
+                        Showcases modern development practices and AI integration in web applications.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">AI/ML</span>
+                        <span class="tech-tag">REST API</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-icon">🌐</div>
+                    <h3 class="project-title">MERN Stack Platform</h3>
+                    <p class="project-description">
+                        Complete full-stack solution implementing MongoDB, Express, React, and Node.js with CRUD operations, 
+                        responsive UI design, and comprehensive API integration for scalable web applications.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Express</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-icon">💻</div>
+                    <h3 class="project-title">Unix Shell Implementation</h3>
+                    <p class="project-description">
+                        C-based command-line shell with UNIX commands, pipes, and environment variable management. 
+                        Demonstrates systems programming and low-level development expertise with memory management.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">C</span>
+                        <span class="tech-tag">Unix</span>
+                        <span class="tech-tag">Bash</span>
+                        <span class="tech-tag">System Calls</span>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <div class="project-icon">🐳</div>
+                    <h3 class="project-title">Containerized Multi-Service App</h3>
+                    <p class="project-description">
+                        Docker and Bash-based multi-service application with web, database, and network orchestration. 
+                        Showcases DevOps skills and infrastructure management capabilities with automated deployments.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Docker Compose</span>
+                        <span class="tech-tag">Bash</span>
+                        <span class="tech-tag">Nginx</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title fade-in">Let's Create Something Amazing</h2>
+            <div class="contact-form fade-in">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+                
+                <div style="margin-top: 40px; text-align: center;">
+                    <p style="color: #cbd5e1; margin-bottom: 20px;">Or reach me directly:</p>
+                    <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+                        <a href="mailto:raminsanei1992@gmail.com" style="color: #6366f1; text-decoration: none; font-weight: 600;">
+                            📧 raminsanei1992@gmail.com
+                        </a>
+                        <span style="color: #cbd5e1;">📍 Heilbronn, Germany</span>
+                        <span style="color: #cbd5e1;">📞 +49 157 320 86503</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <!-- <script>
+        (function(){
+    emailjs.init("zTVZBIjWzoWsm0ndf"); 
+  })();
+
+  function setupContactForm() {
+    const form = document.getElementById('contactForm');
+    const submitBtn = form.querySelector('.submit-btn');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+
+      emailjs.sendForm("service_vkohg5o", "template_jtnzj7a", form)
+        .then(() => {
+          submitBtn.textContent = 'Message Sent! ✓';
+          submitBtn.style.background = 'linear-gradient(45deg, #10b981, #34d399)';
+
+          setTimeout(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            submitBtn.style.background = 'linear-gradient(45deg, #6366f1, #8b5cf6)';
+            form.reset();
+          }, 3000);
+        })
+        .catch((err) => {
+          console.error('Email send failed:', err);
+          submitBtn.textContent = 'Failed ❌';
+          submitBtn.style.background = 'linear-gradient(45deg, #ef4444, #f87171)';
+
+          setTimeout(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            submitBtn.style.background = 'linear-gradient(45deg, #6366f1, #8b5cf6)';
+          }, 3000);
+        });
+    });
+  }
+  setupContactForm();
+
+    </script> -->
+    <script src="main.js"></script>
+</body>
+</html>
