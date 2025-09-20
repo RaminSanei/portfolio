@@ -415,54 +415,18 @@
             </div>
         </div>
     </section>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
-    <!-- <script>
-        (function(){
-    emailjs.init("zTVZBIjWzoWsm0ndf"); 
-  })();
-
-  function setupContactForm() {
-    const form = document.getElementById('contactForm');
-    const submitBtn = form.querySelector('.submit-btn');
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      const originalText = submitBtn.textContent;
-      submitBtn.textContent = 'Sending...';
-      submitBtn.disabled = true;
-
-      emailjs.sendForm("service_vkohg5o", "template_jtnzj7a", form)
-        .then(() => {
-          submitBtn.textContent = 'Message Sent! ✓';
-          submitBtn.style.background = 'linear-gradient(45deg, #10b981, #34d399)';
-
-          setTimeout(() => {
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-            submitBtn.style.background = 'linear-gradient(45deg, #6366f1, #8b5cf6)';
-            form.reset();
-          }, 3000);
-        })
-        .catch((err) => {
-          console.error('Email send failed:', err);
-          submitBtn.textContent = 'Failed ❌';
-          submitBtn.style.background = 'linear-gradient(45deg, #ef4444, #f87171)';
-
-          setTimeout(() => {
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-            submitBtn.style.background = 'linear-gradient(45deg, #6366f1, #8b5cf6)';
-          }, 3000);
-        });
-    });
-  }
-  setupContactForm();
-
-    </script> -->
     <script src="main.js"></script>
+    <!-- Social Links Sidebar -->
+<div class="social-links">
+    <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="social-icon linkedin" aria-label="LinkedIn">
+        <img src="linkedin.svg" alt="LinkedIn">
+    </a>
+    <a href="https://github.com/yourusername" target="_blank" class="social-icon github" aria-label="GitHub">
+        <img src="github.svg" alt="GitHub">
+    </a>
+</div>
+
 </body>
 </html>
