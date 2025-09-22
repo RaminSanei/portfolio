@@ -177,10 +177,14 @@ function init3DBackground() {
 function setupScrollAnimations() {
     const progressBar = document.getElementById("scrollProgress");
 
+    // const observerOptions = {
+    //     threshold: 0.1,
+    //     rootMargin: "0px 0px -10% 0px"
+    // };
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -10% 0px"
-    };
+        threshold: 0,                // any visibility counts
+        rootMargin: "0px 0px -5% 0px" // allow near-bottom trigger
+        };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
