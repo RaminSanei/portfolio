@@ -138,92 +138,48 @@ function init3DBackground() {
 }
 
 // Scroll animations
-// function setupScrollAnimations() {
-//     const navLinks = document.querySelectorAll("#nav a");
-//     const progressBar = document.getElementById("scrollProgress");
-
-//     // Intersection Observer for animations + nav highlighting
-//     const observerOptions = {
-//     threshold: 0.1,             // only 10% needed
-//     rootMargin: "0px 0px -10% 0px"
-//     };
-
-//     const observer = new IntersectionObserver((entries) => {
-//         entries.forEach(entry => {
-//             if (entry.isIntersecting) {
-//                 entry.target.classList.add("visible");
-
-//                 if (entry.target.tagName.toLowerCase() === "section") {
-//                     const id = entry.target.getAttribute("id");
-//                     document.querySelectorAll("header nav a").forEach(link => {
-//                         link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
-//                     });
-//                 }
-//             }
-//         });
-//     }, observerOptions);
-
-
-//     // Observe fade-ins, timeline items, and sections
-//     document.querySelectorAll(".fade-in, .experience-item, section")
-//         .forEach(el => observer.observe(el));
-
-//     // Scroll progress bar (still needs scroll listener, but optimized)
-//     window.addEventListener("scroll", () => {
-//         const scrolled = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-//         progressBar.style.width = `${scrolled * 100}%`;
-//     }, { passive: true });
-// }
-function setupScrollAnimations() {
+    function setupScrollAnimations() {
     const progressBar = document.getElementById("scrollProgress");
+    const navLinks = document.querySelectorAll(".nav-link"); // FIXED selector
 
-    // const observerOptions = {
-    //     threshold: 0.1,
-    //     rootMargin: "0px 0px -10% 0px"
-    // };
+    // Observer options tuned for all screen sizes
     const observerOptions = {
-        threshold: 0,                // any visibility counts
-        rootMargin: "0px 0px -5% 0px" // allow near-bottom trigger
-        };
+        threshold: 0,                  // fire as soon as element is visible
+        rootMargin: "0px 0px -5% 0px"  // allow near-bottom trigger
+    };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                // Trigger fade/slide-in animations
                 entry.target.classList.add("visible");
+
+                // If the target is a section, update nav highlight
+                if (entry.target.tagName.toLowerCase() === "section") {
+                    const id = entry.target.getAttribute("id");
+                    navLinks.forEach(link => {
+                        link.classList.toggle(
+                            "active",
+                            link.getAttribute("href") === `#${id}`
+                        );
+                    });
+                }
             }
         });
     }, observerOptions);
 
-    // Observe fade-ins, timeline items, and sections
-    document.querySelectorAll(".fade-in, .experience-item, section")
+    // Observe sections, fade-ins, and timeline items
+    document.querySelectorAll("section, .fade-in, .experience-item")
         .forEach(el => observer.observe(el));
 
-    // Scroll progress bar
+    // Smooth scroll progress bar
     window.addEventListener("scroll", () => {
         const scrolled = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
         progressBar.style.width = `${scrolled * 100}%`;
     }, { passive: true });
 }
 
-// Navigation
-function setupNavigation() {
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('section, header');
 
-    // Smooth scroll
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
 
     // Active section highlighting
     const observerOptions = {
