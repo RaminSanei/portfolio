@@ -147,7 +147,20 @@ function setupScrollAnimations() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                // Reveal animations
                 entry.target.classList.add('visible');
+
+                // If it's a section, update nav links
+                if (entry.target.tagName.toLowerCase() === "section") {
+                    const id = entry.target.getAttribute("id");
+
+                    document.querySelectorAll("header nav a").forEach(link => {
+                        link.classList.remove("active");
+                        if (link.getAttribute("href") === `#${id}`) {
+                            link.classList.add("active");
+                        }
+                    });
+                }
             }
         });
     }, observerOptions);
@@ -162,12 +175,48 @@ function setupScrollAnimations() {
         observer.observe(el);
     });
 
+    // Observe sections for nav highlighting
+    document.querySelectorAll("section").forEach(section => {
+        observer.observe(section);
+    });
+
     // Scroll progress bar
     window.addEventListener('scroll', () => {
         const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
         document.getElementById('scrollProgress').style.width = scrolled + '%';
     });
 }
+
+// function setupScrollAnimations() {
+//     const observerOptions = {
+//         threshold: 0.1,
+//         rootMargin: '0px 0px -100px 0px'
+//     };
+
+//     const observer = new IntersectionObserver((entries) => {
+//         entries.forEach(entry => {
+//             if (entry.isIntersecting) {
+//                 entry.target.classList.add('visible');
+//             }
+//         });
+//     }, observerOptions);
+
+//     // Observe all fade-in elements
+//     document.querySelectorAll('.fade-in').forEach(el => {
+//         observer.observe(el);
+//     });
+
+//     // Experience timeline animation
+//     document.querySelectorAll('.experience-item').forEach(el => {
+//         observer.observe(el);
+//     });
+
+//     // Scroll progress bar
+//     window.addEventListener('scroll', () => {
+//         const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+//         document.getElementById('scrollProgress').style.width = scrolled + '%';
+//     });
+// }
 
 // Navigation
 function setupNavigation() {
