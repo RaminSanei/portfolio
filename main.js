@@ -138,37 +138,6 @@ function init3DBackground() {
 }
 
 // Scroll animations
-
-// function setupScrollAnimations() {
-//     const progressBar = document.getElementById("scrollProgress");
-
-//     // const observerOptions = {
-//     //     threshold: 0.1,
-//     //     rootMargin: "0px 0px -10% 0px"
-//     // };
-//     const observerOptions = {
-//         threshold: 0,                // any visibility counts
-//         rootMargin: "0px 0px -5% 0px" // allow near-bottom trigger
-//         };
-
-//     const observer = new IntersectionObserver((entries) => {
-//         entries.forEach(entry => {
-//             if (entry.isIntersecting) {
-//                 entry.target.classList.add("visible");
-//             }
-//         });
-//     }, observerOptions);
-
-//     // Observe fade-ins, timeline items, and sections
-//     document.querySelectorAll(".fade-in, .experience-item, section")
-//         .forEach(el => observer.observe(el));
-
-//     // Scroll progress bar
-//     window.addEventListener("scroll", () => {
-//         const scrolled = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-//         progressBar.style.width = `${scrolled * 100}%`;
-//     }, { passive: true });
-// }
 function setupScrollAnimations() {
     const progressBar = document.getElementById("scrollProgress");
     const navLinks = document.querySelectorAll(".nav-link"); // FIXED selector
