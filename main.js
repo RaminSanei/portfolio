@@ -139,52 +139,43 @@ function init3DBackground() {
 
 // Scroll animations
 function setupScrollAnimations() {
+    const navLinks = document.querySelectorAll("header nav a");
+    const progressBar = document.getElementById("scrollProgress");
+
+    // Intersection Observer for animations + nav highlighting
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
+        threshold: 0.5, // section is "active" when ~50% visible
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Reveal animations
-                entry.target.classList.add('visible');
+                // Animate elements
+                entry.target.classList.add("visible");
 
-                // If it's a section, update nav links
+                // If it's a section, update nav highlight
                 if (entry.target.tagName.toLowerCase() === "section") {
                     const id = entry.target.getAttribute("id");
-
-                    document.querySelectorAll("header nav a").forEach(link => {
-                        link.classList.remove("active");
-                        if (link.getAttribute("href") === `#${id}`) {
-                            link.classList.add("active");
-                        }
+                    navLinks.forEach(link => {
+                        link.classList.toggle(
+                            "active",
+                            link.getAttribute("href") === `#${id}`
+                        );
                     });
                 }
             }
         });
     }, observerOptions);
 
-    // Observe all fade-in elements
-    document.querySelectorAll('.fade-in').forEach(el => {
-        observer.observe(el);
-    });
+    // Observe fade-ins, timeline items, and sections
+    document.querySelectorAll(".fade-in, .experience-item, section")
+        .forEach(el => observer.observe(el));
 
-    // Experience timeline animation
-    document.querySelectorAll('.experience-item').forEach(el => {
-        observer.observe(el);
-    });
-
-    // Observe sections for nav highlighting
-    document.querySelectorAll("section").forEach(section => {
-        observer.observe(section);
-    });
-
-    // Scroll progress bar
-    window.addEventListener('scroll', () => {
-        const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-        document.getElementById('scrollProgress').style.width = scrolled + '%';
-    });
+    // Scroll progress bar (still needs scroll listener, but optimized)
+    window.addEventListener("scroll", () => {
+        const scrolled = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+        progressBar.style.width = `${scrolled * 100}%`;
+    }, { passive: true });
 }
 
 // function setupScrollAnimations() {
