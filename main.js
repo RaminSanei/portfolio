@@ -144,28 +144,25 @@ function setupScrollAnimations() {
 
     // Intersection Observer for animations + nav highlighting
     const observerOptions = {
-        threshold: 0.5, // section is "active" when ~50% visible
-    };
+        threshold: 0.2,
+        rootMargin: "0px 0px -20% 0px"
+        };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Animate elements
                 entry.target.classList.add("visible");
 
-                // If it's a section, update nav highlight
                 if (entry.target.tagName.toLowerCase() === "section") {
                     const id = entry.target.getAttribute("id");
-                    navLinks.forEach(link => {
-                        link.classList.toggle(
-                            "active",
-                            link.getAttribute("href") === `#${id}`
-                        );
+                    document.querySelectorAll("header nav a").forEach(link => {
+                        link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
                     });
                 }
             }
         });
     }, observerOptions);
+
 
     // Observe fade-ins, timeline items, and sections
     document.querySelectorAll(".fade-in, .experience-item, section")
@@ -178,36 +175,6 @@ function setupScrollAnimations() {
     }, { passive: true });
 }
 
-// function setupScrollAnimations() {
-//     const observerOptions = {
-//         threshold: 0.1,
-//         rootMargin: '0px 0px -100px 0px'
-//     };
-
-//     const observer = new IntersectionObserver((entries) => {
-//         entries.forEach(entry => {
-//             if (entry.isIntersecting) {
-//                 entry.target.classList.add('visible');
-//             }
-//         });
-//     }, observerOptions);
-
-//     // Observe all fade-in elements
-//     document.querySelectorAll('.fade-in').forEach(el => {
-//         observer.observe(el);
-//     });
-
-//     // Experience timeline animation
-//     document.querySelectorAll('.experience-item').forEach(el => {
-//         observer.observe(el);
-//     });
-
-//     // Scroll progress bar
-//     window.addEventListener('scroll', () => {
-//         const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-//         document.getElementById('scrollProgress').style.width = scrolled + '%';
-//     });
-// }
 
 // Navigation
 function setupNavigation() {
