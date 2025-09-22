@@ -138,43 +138,68 @@ function init3DBackground() {
 }
 
 // Scroll animations
+// function setupScrollAnimations() {
+//     const navLinks = document.querySelectorAll("#nav a");
+//     const progressBar = document.getElementById("scrollProgress");
+
+//     // Intersection Observer for animations + nav highlighting
+//     const observerOptions = {
+//     threshold: 0.1,             // only 10% needed
+//     rootMargin: "0px 0px -10% 0px"
+//     };
+
+//     const observer = new IntersectionObserver((entries) => {
+//         entries.forEach(entry => {
+//             if (entry.isIntersecting) {
+//                 entry.target.classList.add("visible");
+
+//                 if (entry.target.tagName.toLowerCase() === "section") {
+//                     const id = entry.target.getAttribute("id");
+//                     document.querySelectorAll("header nav a").forEach(link => {
+//                         link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+//                     });
+//                 }
+//             }
+//         });
+//     }, observerOptions);
+
+
+//     // Observe fade-ins, timeline items, and sections
+//     document.querySelectorAll(".fade-in, .experience-item, section")
+//         .forEach(el => observer.observe(el));
+
+//     // Scroll progress bar (still needs scroll listener, but optimized)
+//     window.addEventListener("scroll", () => {
+//         const scrolled = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+//         progressBar.style.width = `${scrolled * 100}%`;
+//     }, { passive: true });
+// }
 function setupScrollAnimations() {
-    const navLinks = document.querySelectorAll("header nav a");
     const progressBar = document.getElementById("scrollProgress");
 
-    // Intersection Observer for animations + nav highlighting
     const observerOptions = {
-        threshold: 0.2,
-        rootMargin: "0px 0px -20% 0px"
-        };
+        threshold: 0.1,
+        rootMargin: "0px 0px -10% 0px"
+    };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("visible");
-
-                if (entry.target.tagName.toLowerCase() === "section") {
-                    const id = entry.target.getAttribute("id");
-                    document.querySelectorAll("header nav a").forEach(link => {
-                        link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
-                    });
-                }
             }
         });
     }, observerOptions);
-
 
     // Observe fade-ins, timeline items, and sections
     document.querySelectorAll(".fade-in, .experience-item, section")
         .forEach(el => observer.observe(el));
 
-    // Scroll progress bar (still needs scroll listener, but optimized)
+    // Scroll progress bar
     window.addEventListener("scroll", () => {
         const scrolled = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
         progressBar.style.width = `${scrolled * 100}%`;
     }, { passive: true });
 }
-
 
 // Navigation
 function setupNavigation() {
